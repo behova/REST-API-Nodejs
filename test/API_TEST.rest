@@ -1,0 +1,38 @@
+### create blog post
+POST  http://localhost:3000/api/posts
+Content-Type: application/json
+
+{
+    "title":"First API Test",
+    "body": "test the post body"
+}
+### register user
+POST  http://localhost:3000/api/users/register
+Content-Type: application/json
+
+{
+    "name": "Stephen",
+    "email": "sukmydik@goat.com",
+    "password": "password123"
+}
+
+### login user
+POST  http://localhost:3000/api/users/login
+Content-Type: application/json
+
+{
+    "email": "sukmydik@goat.com",
+    "password": "password123"
+}
+
+### get user
+POST  http://localhost:3000/api/users
+
+
+
+
+
+
+
+
+

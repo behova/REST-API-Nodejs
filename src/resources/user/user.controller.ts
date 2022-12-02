@@ -18,12 +18,12 @@ class UserController implements Controller {
     private initRoutes(): void {
         this.router.post(
             `${this.path}/register`,
-            validationMiddleware(validate.register),
+            validationMiddleware(validate.register, 'body'),
             this.register,
         );
         this.router.post(
             `${this.path}/login`,
-            validationMiddleware(validate.login),
+            validationMiddleware(validate.login, 'body'),
             this.login,
         );
         this.router.get(`${this.path}`, authenticated, this.getUser);

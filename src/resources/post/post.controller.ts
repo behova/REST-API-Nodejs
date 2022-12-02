@@ -17,7 +17,7 @@ class PostController implements Controller {
     private initRoutes(): void {
         this.router.post(
             `${this.path}`,
-            validationMiddleware(validate.create),
+            validationMiddleware(validate.create, 'body'),
             this.create,
         );
     }

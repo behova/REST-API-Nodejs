@@ -4,11 +4,13 @@ import HttpException from '@/utils/exceptions/http.exception';
 import validationMiddleware from '@/middleware/validation.middleware';
 import validate from '@/resources/imageObject/imageObject.validation';
 import ImageObjectService from '@/resources/imageObject/imageObject.service';
+import Logger from '@/utils/logger';
 
 class ImageObjectController implements Controller {
     public path = '/images';
     public router = Router();
     private ImageObjectService = new ImageObjectService();
+    private logger = Logger.getLogger('controller');
 
     constructor() {
         this.initRoutes();
@@ -33,7 +35,10 @@ class ImageObjectController implements Controller {
             const imageObjects = await this.ImageObjectService.getMany(amount);
 
             res.status(200).json({ imageObjects });
+
+            this.logger.info(`Retrieved ${amount} images`);
         } catch (error) {
+            this.logger.error(error);
             next(new HttpException(400, 'Could not retrieve images (C)'));
         }
     };

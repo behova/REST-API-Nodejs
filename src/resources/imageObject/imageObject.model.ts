@@ -1,12 +1,12 @@
-import { array, number } from 'joi';
 import { Schema, model } from 'mongoose';
-import ImageObject from './imageObject.interface';
+import { ImageObjectInterface } from './imageObject.interface';
 
 const ImageObjectSchema = new Schema(
     {
         url: {
             type: String,
             required: true,
+            unique: true,
         },
         source: {
             type: String,
@@ -27,4 +27,4 @@ const ImageObjectSchema = new Schema(
     },
     { timestamps: true },
 );
-export default model<ImageObject>('images', ImageObjectSchema);
+export default model<ImageObjectInterface>('imageObject', ImageObjectSchema);

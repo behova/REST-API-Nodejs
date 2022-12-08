@@ -2,14 +2,14 @@ import 'dotenv/config';
 import 'module-alias/register';
 import App from './app';
 import validateEnv from '@/utils/validateEnv';
-import PostController from '@/resources/post/post.controller';
-import UserController from '@/resources/user/user.controller';
 import ImageObjectController from '@/resources/imageObject/imageObject.controller';
+import ImageObjectScheduler from '@/resources/imageObject/imageObject.scheduler';
 
 validateEnv();
 
 const app = new App(
-    [new PostController(), new UserController(), new ImageObjectController()],
+    [new ImageObjectController()],
+    [new ImageObjectScheduler()],
     Number(process.env.PORT),
 );
 

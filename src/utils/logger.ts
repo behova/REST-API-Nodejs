@@ -4,6 +4,7 @@ import log4js from 'log4js';
 const Logger = log4js;
 
 Logger.configure({
+    pm2: true,
     appenders: {
         console: { type: 'stdout', layout: { type: 'colored' } },
         withFile: { type: 'file', filename: 'catch.log' },

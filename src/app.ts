@@ -52,10 +52,23 @@ class App {
 
     private initDatabaseConnection(): void {
         const { MONGO_USER, MONGO_PASSWORD, MONGO_PATH } = process.env;
+        const options = {
+            useNewUrlParser: true,
+            useCreateIndex: true,
+            useUnifiedTopology: true,
+        };
 
-        mongoose.connect(
-            `mongodb+srv://${MONGO_USER}:${MONGO_PASSWORD}${MONGO_PATH}`,
-        );
+        try {
+            mongoose.connect(
+                `mongodb+srv://${MONGO_USER}:${MONGO_PASSWORD}${MONGO_PATH}`,
+            );
+        } catch (error) {
+            console.log('MGConnect', error);
+        }
+
+        mongoose.connection.on('error', (err) => {
+            console.log('MGafterC', err);
+        });
     }
 
     public listen(): void {

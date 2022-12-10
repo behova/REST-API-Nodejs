@@ -4,7 +4,6 @@ import log4js from 'log4js';
 const Logger = log4js;
 
 Logger.configure({
-    pm2: true,
     appenders: {
         console: { type: 'stdout', layout: { type: 'colored' } },
         withFile: { type: 'file', filename: 'catch.log' },
@@ -30,12 +29,14 @@ Logger.configure({
         fourChanScraper: { appenders: ['console', 'multi'], level: 'trace' },
         express: { appenders: ['console', 'multi'], level: 'trace' },
     },
+    pm2: true,
 });
 
 export const redditScraper = Logger.getLogger('redditScraper');
 export const fourChanScraper = Logger.getLogger('fourChanScraper');
 export const express = Logger.connectLogger(Logger.getLogger('express'), {
     level: 'any',
+    format: ':date :remote-addr :method :status :url ',
 });
 
 export default Logger;

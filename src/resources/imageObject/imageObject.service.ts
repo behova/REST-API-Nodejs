@@ -8,6 +8,39 @@ class ImageObjectService {
     private logger = Logger.getLogger('service');
 
     /**
+     * Get document count
+     */
+    public async getDocumentCount(): Promise<number> {
+        try {
+            const count = await this.imageObject.countDocuments();
+            return count;
+        } catch (error) {
+            this.logger.error(`Failed to retrieve count database`);
+            throw new Error('Unable count image objects');
+        }
+    }
+
+    /**
+     * pagination get images
+     */
+    public async getByPage(
+        page: number,
+        imgPerPage: number,
+    ): Promise<(ImageObject & { _id: string })[]> {
+        try {
+            const images = await this.imageObject
+                .find()
+                .sort({ _id: -1 })
+                .skip(page * imgPerPage)
+                .limit(imgPerPage);
+            return images;
+        } catch (error) {
+            this.logger.error(`Failed to retrieve page ${page} of images`);
+            throw new Error('Unable to retrieve images (S)');
+        }
+    }
+
+    /**
      * Get a specified amount of images
      */
     public async getMany(

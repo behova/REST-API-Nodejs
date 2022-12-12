@@ -9,4 +9,10 @@ const getMany = {
     }),
 };
 
-export default { getMany };
+const getByPage = {
+    params: Joi.object({
+        page: Joi.string().min(1).max(3).truncate().regex(/^\d+$/).required(),
+    }),
+};
+
+export default { getMany, getByPage };

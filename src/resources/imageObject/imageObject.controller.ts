@@ -18,11 +18,68 @@ class ImageObjectController implements Controller {
 
     private initRoutes(): void {
         this.router.get(
+            `${this.path}/count`,
+            //validationMiddleware(validate.getMany.params, 'params'),
+            this.getDocumentCount,
+        );
+
+        this.router.get(
+            `${this.path}/page/:page`,
+            validationMiddleware(validate.getByPage.params, 'params'),
+            this.getByPage,
+        );
+
+        this.router.get(
             `${this.path}/:amount`,
             validationMiddleware(validate.getMany.params, 'params'),
             this.getMany,
         );
     }
+
+    private getDocumentCount = async (
+        req: Request,
+        res: Response,
+        next: NextFunction,
+    ): Promise<Response | void> => {
+        try {
+            const count = await this.ImageObjectService.getDocumentCount();
+
+            res.status(200).json({ count });
+
+            this.logger.info(`There are ${count} images in the database..`);
+        } catch (error) {
+            this.logger.error(error);
+            next(
+                new HttpException(400, 'Could not retrieve document count (C)'),
+            );
+        }
+    };
+
+    private getByPage = async (
+        req: Request,
+        res: Response,
+        next: NextFunction,
+    ): Promise<Response | void> => {
+        try {
+            const page = Number(req.params.page) || 0;
+            const imgPerPage = 25;
+
+            const total = await this.ImageObjectService.getDocumentCount();
+            const imageObjects = await this.ImageObjectService.getByPage(
+                page,
+                imgPerPage,
+            );
+
+            res.status(200).json({ imageObjects });
+
+            this.logger.info(
+                `Retrieved page ${page} of ${Math.ceil(total / imgPerPage)}`,
+            );
+        } catch (error) {
+            this.logger.error(error);
+            next(new HttpException(400, 'Could not retrieve image page (C)'));
+        }
+    };
 
     private getMany = async (
         req: Request,

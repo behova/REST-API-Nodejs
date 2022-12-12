@@ -1,3 +1,23 @@
 [2022-12-09T19:45:28.322] [INFO] express - Sat, 10 Dec 2022 03:45:28 GMT ::ffff:127.0.0.1[x-forwarded-for] GET 200 
 [2022-12-09T19:47:27.529] [INFO] express - Sat, 10 Dec 2022 03:47:27 GMT :x-forwarded-for GET 200 
 [2022-12-09T19:52:18.863] [INFO] express - Sat, 10 Dec 2022 03:52:18 GMT ::ffff:127.0.0.1 GET 200 /poppet/images/4 
+[2022-12-12T13:31:28.231] [INFO] express - undefined - - "GET /poppet/images/count HTTP/1.1" 200 - "" "insomnia/2022.6.0"
+[2022-12-12T13:32:17.653] [INFO] express - ::ffff:127.0.0.1 - - "GET /poppet/images/count HTTP/1.1" 200 13 "" "insomnia/2022.6.0"
+[2022-12-12T13:32:59.363] [INFO] express - ::ffff:127.0.0.1 - - "GET /poppet/images?page=0 HTTP/1.1" 400 37 "" "insomnia/2022.6.0"
+[2022-12-12T13:33:35.895] [INFO] express - ::ffff:127.0.0.1 - - "GET /poppet/images?page=0 HTTP/1.1" 400 35 "" "insomnia/2022.6.0"
+[2022-12-12T13:33:52.040] [INFO] express - ::ffff:127.0.0.1 - - "GET /poppet/images?page=1 HTTP/1.1" 400 35 "" "insomnia/2022.6.0"
+[2022-12-12T13:34:15.087] [INFO] express - ::ffff:127.0.0.1 - - "GET /poppet/images?page=1 HTTP/1.1" 200 11556 "" "insomnia/2022.6.0"
+[2022-12-12T13:36:01.117] [INFO] express - ::ffff:127.0.0.1 - - "GET /poppet/images?page=1 HTTP/1.1" 200 11556 "" "insomnia/2022.6.0"
+[2022-12-12T13:36:39.490] [INFO] express - ::ffff:127.0.0.1 - - "GET /poppet/images?page=2 HTTP/1.1" 200 11556 "" "insomnia/2022.6.0"
+[2022-12-12T13:36:50.741] [INFO] express - ::ffff:127.0.0.1 - - "GET /poppet/images?page=3 HTTP/1.1" 200 11556 "" "insomnia/2022.6.0"
+[2022-12-12T13:37:01.945] [INFO] express - ::ffff:127.0.0.1 - - "GET /poppet/images?page=4 HTTP/1.1" 200 11556 "" "insomnia/2022.6.0"
+[2022-12-12T13:37:11.685] [INFO] express - ::ffff:127.0.0.1 - - "GET /poppet/images?page=6 HTTP/1.1" 200 11556 "" "insomnia/2022.6.0"
+[2022-12-12T13:37:18.457] [INFO] express - ::ffff:127.0.0.1 - - "GET /poppet/images?page=8 HTTP/1.1" 200 11556 "" "insomnia/2022.6.0"
+[2022-12-12T13:38:35.139] [INFO] express - ::ffff:127.0.0.1 - - "GET /poppet/images?page=8 HTTP/1.1" 404 152 "" "insomnia/2022.6.0"
+[2022-12-12T13:38:44.622] [INFO] express - ::ffff:127.0.0.1 - - "GET /poppet/images/page/8 HTTP/1.1" 200 11090 "" "insomnia/2022.6.0"
+[2022-12-12T13:38:51.114] [INFO] express - ::ffff:127.0.0.1 - - "GET /poppet/images/page/9 HTTP/1.1" 200 11288 "" "insomnia/2022.6.0"
+[2022-12-12T13:38:58.824] [INFO] express - ::ffff:127.0.0.1 - - "GET /poppet/images/page/14 HTTP/1.1" 200 11202 "" "insomnia/2022.6.0"
+[2022-12-12T13:39:03.191] [INFO] express - ::ffff:127.0.0.1 - - "GET /poppet/images/page/ HTTP/1.1" 400 89 "" "insomnia/2022.6.0"
+[2022-12-12T13:39:08.996] [INFO] express - ::ffff:127.0.0.1 - - "GET /poppet/images/page/fg HTTP/1.1" 400 87 "" "insomnia/2022.6.0"
+[2022-12-12T13:39:13.430] [INFO] express - ::ffff:127.0.0.1 - - "GET /poppet/images/page/2022-12-12T21:39:13.377Z HTTP/1.1" 200 19 "" "insomnia/2022.6.0"
+[2022-12-12T13:39:19.645] [INFO] express - ::ffff:127.0.0.1 - - "GET /poppet/images/page/1 HTTP/1.1" 200 11276 "" "insomnia/2022.6.0"

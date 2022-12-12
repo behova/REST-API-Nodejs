@@ -36,7 +36,6 @@ export const redditScraper = Logger.getLogger('redditScraper');
 export const fourChanScraper = Logger.getLogger('fourChanScraper');
 export const express = Logger.connectLogger(Logger.getLogger('express'), {
     level: 'any',
-    format: ':date :remote-addr :method :status :url ',
 });
 
 export default Logger;

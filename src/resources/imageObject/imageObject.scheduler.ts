@@ -67,7 +67,7 @@ class ImageObjectScheduler implements Scheduler {
         });
 
         orchestrateJob.start();
-        this.logger.info('started scraper schedules');
+        this.logger.info('starting scraper schedules...');
     }
 }
 

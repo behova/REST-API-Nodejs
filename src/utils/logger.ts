@@ -37,5 +37,6 @@ export const fourChanScraper = Logger.getLogger('fourChanScraper');
 export const express = Logger.connectLogger(Logger.getLogger('express'), {
     level: 'any',
 });
+export const scheduler = Logger.getLogger('scheduler');
 
 export default Logger;

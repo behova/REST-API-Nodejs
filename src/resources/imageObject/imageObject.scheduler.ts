@@ -2,12 +2,10 @@ import cron from 'cron';
 import RedditScraper from '../../scrapers/reddit/redditV1';
 import Scheduler from '@/utils/interfaces/scheduler.interface';
 import FourChanScraper from '../../scrapers/fourChan/fourChanv1';
-import Logger from '@/utils/logger';
-import ImageObjectService from './imageObject.service';
+import { scheduler } from '@/utils/logger';
 
 class ImageObjectScheduler implements Scheduler {
-    private mainSchedule = '0 0 */7 * * *';
-    private logger = Logger.getLogger('scheduler');
+    public mainSchedule = '0 0 */5 * * *';
 
     constructor() {
         this.initSchedule();
@@ -26,17 +24,11 @@ class ImageObjectScheduler implements Scheduler {
     //     return [time, timeTwo];
     // }
 
-    private createScraperSchedules(): number[] {
-        let min = 3600000; //one hour
-        let max = 18000000; //5 hours
+    createScraperSchedules(): number[] {
+        let min = 3.6e6; //one hour
+        let max = 1.44e7; //4 hours
         let timeOne = Math.floor(Math.random() * (max - min) + min);
-        let timeTwo = timeOne + 3600000;
-
-        this.logger.info(
-            `scheduled scrapes in ${timeOne / 3600000} and ${
-                timeTwo / 3600000
-            } hours`,
-        );
+        let timeTwo = timeOne + 3.6e6;
 
         return [timeOne, timeTwo];
     }
@@ -53,10 +45,17 @@ class ImageObjectScheduler implements Scheduler {
                 setTimeout(function () {
                     new FourChanScraper();
                 }, timeTwo);
+                scheduler.info(
+                    `scheduled scrapes in ${timeOne / 3.6e6} and ${
+                        timeTwo / 3.6e6
+                    } hours`,
+                );
             },
             start: false,
             timeZone: 'America/Los_Angeles',
         });
+        scheduler.info('started scraper schedule');
+
         scheduleScrapers.start();
     }
 

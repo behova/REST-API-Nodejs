@@ -16,3 +16,68 @@
 [2022-12-12T13:37:37.119] [INFO] scheduler - starting scraper schedules...
 [2022-12-12T13:38:08.213] [INFO] scheduler - starting scraper schedules...
 [2022-12-12T13:38:29.686] [INFO] scheduler - starting scraper schedules...
+[2022-12-13T10:44:00.206] [INFO] scheduler - started scraper schedule
+[2022-12-13T11:12:01.448] [INFO] scheduler - started scraper schedule
+[2022-12-13T11:13:56.806] [INFO] scheduler - started scraper schedule
+[2022-12-13T11:40:00.001] [INFO] scheduler - scheduled scrapes in 294684 and 894684 hours
+[2022-12-13T11:40:01.002] [INFO] scheduler - scheduled scrapes in 571392 and 1171392 hours
+[2022-12-13T11:40:02.000] [INFO] scheduler - scheduled scrapes in 169137 and 769137 hours
+[2022-12-13T11:40:03.001] [INFO] scheduler - scheduled scrapes in 527099 and 1127099 hours
+[2022-12-13T11:40:04.001] [INFO] scheduler - scheduled scrapes in 294795 and 894795 hours
+[2022-12-13T11:40:05.001] [INFO] scheduler - scheduled scrapes in 225019 and 825019 hours
+[2022-12-13T11:40:06.002] [INFO] scheduler - scheduled scrapes in 331395 and 931395 hours
+[2022-12-13T11:40:07.001] [INFO] scheduler - scheduled scrapes in 542832 and 1142832 hours
+[2022-12-13T11:40:08.002] [INFO] scheduler - scheduled scrapes in 213192 and 813192 hours
+[2022-12-13T11:40:09.000] [INFO] scheduler - scheduled scrapes in 405099 and 1005099 hours
+[2022-12-13T11:40:10.001] [INFO] scheduler - scheduled scrapes in 354582 and 954582 hours
+[2022-12-13T11:40:11.002] [INFO] scheduler - scheduled scrapes in 404917 and 1004917 hours
+[2022-12-13T11:40:12.002] [INFO] scheduler - scheduled scrapes in 568330 and 1168330 hours
+[2022-12-13T11:40:13.000] [INFO] scheduler - scheduled scrapes in 519781 and 1119781 hours
+[2022-12-13T11:40:14.001] [INFO] scheduler - scheduled scrapes in 531115 and 1131115 hours
+[2022-12-13T11:40:15.002] [INFO] scheduler - scheduled scrapes in 535335 and 1135335 hours
+[2022-12-13T11:40:16.002] [INFO] scheduler - scheduled scrapes in 392730 and 992730 hours
+[2022-12-13T11:40:17.002] [INFO] scheduler - scheduled scrapes in 253354 and 853354 hours
+[2022-12-13T11:40:18.001] [INFO] scheduler - scheduled scrapes in 251408 and 851408 hours
+[2022-12-13T11:40:19.000] [INFO] scheduler - scheduled scrapes in 311023 and 911023 hours
+[2022-12-13T11:40:20.002] [INFO] scheduler - scheduled scrapes in 484807 and 1084807 hours
+[2022-12-13T11:40:21.001] [INFO] scheduler - scheduled scrapes in 504958 and 1104958 hours
+[2022-12-13T11:45:13.186] [INFO] scheduler - started scraper schedule
+[2022-12-13T12:00:00.002] [INFO] scheduler - scheduled scrapes in 135996 and 735996 milliseconds
+[2022-12-13T12:00:01.001] [INFO] scheduler - scheduled scrapes in 185835 and 785835 milliseconds
+[2022-12-13T12:00:02.001] [INFO] scheduler - scheduled scrapes in 226436 and 826436 milliseconds
+[2022-12-13T12:00:03.002] [INFO] scheduler - scheduled scrapes in 497891 and 1097891 milliseconds
+[2022-12-13T12:00:04.001] [INFO] scheduler - scheduled scrapes in 538595 and 1138595 milliseconds
+[2022-12-13T12:00:05.001] [INFO] scheduler - scheduled scrapes in 268676 and 868676 milliseconds
+[2022-12-13T12:00:06.001] [INFO] scheduler - scheduled scrapes in 485284 and 1085284 milliseconds
+[2022-12-13T12:00:07.000] [INFO] scheduler - scheduled scrapes in 587533 and 1187533 milliseconds
+[2022-12-13T12:00:08.001] [INFO] scheduler - scheduled scrapes in 257440 and 857440 milliseconds
+[2022-12-13T12:00:09.001] [INFO] scheduler - scheduled scrapes in 350690 and 950690 milliseconds
+[2022-12-13T12:00:10.002] [INFO] scheduler - scheduled scrapes in 392785 and 992785 milliseconds
+[2022-12-13T12:00:11.001] [INFO] scheduler - scheduled scrapes in 154771 and 754771 milliseconds
+[2022-12-13T12:00:12.001] [INFO] scheduler - scheduled scrapes in 210637 and 810637 milliseconds
+[2022-12-13T12:00:13.001] [INFO] scheduler - scheduled scrapes in 220308 and 820308 milliseconds
+[2022-12-13T12:00:14.001] [INFO] scheduler - scheduled scrapes in 225152 and 825152 milliseconds
+[2022-12-13T12:00:15.001] [INFO] scheduler - scheduled scrapes in 528262 and 1128262 milliseconds
+[2022-12-13T12:00:16.002] [INFO] scheduler - scheduled scrapes in 596856 and 1196856 milliseconds
+[2022-12-13T12:00:17.001] [INFO] scheduler - scheduled scrapes in 385421 and 985421 milliseconds
+[2022-12-13T12:00:18.001] [INFO] scheduler - scheduled scrapes in 414222 and 1014222 milliseconds
+[2022-12-13T12:00:19.002] [INFO] scheduler - scheduled scrapes in 160633 and 760633 milliseconds
+[2022-12-13T12:00:20.002] [INFO] scheduler - scheduled scrapes in 299702 and 899702 milliseconds
+[2022-12-13T12:00:21.001] [INFO] scheduler - scheduled scrapes in 333827 and 933827 milliseconds
+[2022-12-13T12:00:22.002] [INFO] scheduler - scheduled scrapes in 531545 and 1131545 milliseconds
+[2022-12-13T12:00:23.002] [INFO] scheduler - scheduled scrapes in 405506 and 1005506 milliseconds
+[2022-12-13T12:00:24.001] [INFO] scheduler - scheduled scrapes in 318391 and 918391 milliseconds
+[2022-12-13T12:00:25.001] [INFO] scheduler - scheduled scrapes in 513089 and 1113089 milliseconds
+[2022-12-13T12:00:26.001] [INFO] scheduler - scheduled scrapes in 482862 and 1082862 milliseconds
+[2022-12-13T12:00:27.000] [INFO] scheduler - scheduled scrapes in 534144 and 1134144 milliseconds
+[2022-12-13T12:00:28.001] [INFO] scheduler - scheduled scrapes in 203490 and 803490 milliseconds
+[2022-12-13T12:00:29.001] [INFO] scheduler - scheduled scrapes in 189286 and 789286 milliseconds
+[2022-12-13T12:00:30.001] [INFO] scheduler - scheduled scrapes in 499655 and 1099655 milliseconds
+[2022-12-13T12:00:31.002] [INFO] scheduler - scheduled scrapes in 549906 and 1149906 milliseconds
+[2022-12-13T12:00:32.001] [INFO] scheduler - scheduled scrapes in 192862 and 792862 milliseconds
+[2022-12-13T12:00:33.002] [INFO] scheduler - scheduled scrapes in 130600 and 730600 milliseconds
+[2022-12-13T12:00:34.002] [INFO] scheduler - scheduled scrapes in 271671 and 871671 milliseconds
+[2022-12-13T12:02:44.047] [INFO] scheduler - started scraper schedule
+[2022-12-13T12:40:00.011] [INFO] scheduler - scheduled scrapes in 205933 and 805933 milliseconds
+[2022-12-13T12:41:17.160] [INFO] scheduler - started scraper schedule
+[2022-12-13T13:00:00.009] [INFO] scheduler - scheduled scrapes in 340134 and 940134 milliseconds

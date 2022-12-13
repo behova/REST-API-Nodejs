@@ -1,0 +1,24 @@
+[2022-12-13T13:05:40.144] [INFO] redditScraper - Initiating scrape
+[2022-12-13T13:05:47.024] [INFO] redditScraper - found 6 images
+[2022-12-13T13:06:04.465] [INFO] redditScraper - BulkWriteResult {
+  result: {
+    ok: 1,
+    writeErrors: [
+      [WriteError],
+      [WriteError],
+      [WriteError],
+      [WriteError],
+      [WriteError],
+      [WriteError]
+    ],
+    writeConcernErrors: [],
+    insertedIds: [ [Object], [Object], [Object], [Object], [Object], [Object] ],
+    nInserted: 0,
+    nUpserted: 0,
+    nMatched: 0,
+    nModified: 0,
+    nRemoved: 0,
+    upserted: [],
+    opTime: { ts: new Timestamp({ t: 1670965564, i: 5 }), t: 101 }
+  }
+}

@@ -10,6 +10,7 @@ let buildObjectsNew = async function (urls: string[]): Promise<ImageObject[]> {
     let bufferA: Buffer;
     let metadata: sharp.Metadata;
     let colorArray: Uint8ClampedArray = new Uint8ClampedArray();
+    let thumbnailB: Buffer;
 
     const getAxios = async (url: string) => {
         try {
@@ -36,6 +37,10 @@ let buildObjectsNew = async function (urls: string[]): Promise<ImageObject[]> {
     const sharpProccessing = async () => {
         try {
             metadata = await sharp(bufferA).metadata();
+            thumbnailB = await sharp(bufferA)
+                .resize({ width: 500 })
+                .png()
+                .toBuffer();
 
             let { data, info } = await sharp(bufferA)
                 .resize({ width: 500 })
@@ -54,6 +59,7 @@ let buildObjectsNew = async function (urls: string[]): Promise<ImageObject[]> {
         let width = 0;
         let height = 0;
         let channels = 3;
+        let thumbnail = 'none';
         if (metadata.width !== undefined) {
             width = metadata.width;
         }
@@ -63,13 +69,21 @@ let buildObjectsNew = async function (urls: string[]): Promise<ImageObject[]> {
         if (metadata.channels !== undefined) {
             channels = metadata.channels;
         }
-        return { width: width, height: height, channels: channels };
+        if (metadata.channels !== undefined) {
+            thumbnail = thumbnailB.toString();
+        }
+        return {
+            width: width,
+            height: height,
+            channels: channels,
+            thumbnail: thumbnail,
+        };
     };
 
     for (let i in urls) {
         await getAxios(urls[i]);
         await sharpProccessing();
-        let { width, height, channels } = await buildObject();
+        let { width, height, channels, thumbnail } = await buildObject();
         let pallet = await getPallet(colorArray, channels);
 
         objects.push({
@@ -78,6 +92,7 @@ let buildObjectsNew = async function (urls: string[]): Promise<ImageObject[]> {
             width: width,
             height: height,
             pallet: pallet,
+            thumbnail: thumbnail,
         });
     }
 

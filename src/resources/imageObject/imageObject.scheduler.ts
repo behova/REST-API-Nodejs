@@ -46,9 +46,9 @@ class ImageObjectScheduler implements Scheduler {
                     new FourChanScraper();
                 }, timeTwo);
                 scheduler.info(
-                    `scheduled scrapes in ${timeOne / 3.6e6} and ${
-                        timeTwo / 3.6e6
-                    } hours`,
+                    `scheduled scrapes in ${Math.floor(
+                        timeOne / 3.6e6,
+                    )} and ${Math.floor(timeTwo / 3.6e6)} hours`,
                 );
             },
             start: false,

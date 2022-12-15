@@ -24,6 +24,10 @@ const ImageObjectSchema = new Schema(
             type: [[Number]],
             required: true,
         },
+        thumbnail: {
+            type: String,
+            required: true,
+        },
     },
     { timestamps: true },
 );

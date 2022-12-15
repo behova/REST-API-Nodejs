@@ -6,6 +6,7 @@ export interface ImageObject {
     width: number;
     height: number;
     pallet: number[][];
+    thumbnail: string;
 }
 
 export interface ImageObjectInterface extends ImageObject, Document {}

@@ -37,10 +37,7 @@ let buildObjectsNew = async function (urls: string[]): Promise<ImageObject[]> {
     const sharpProccessing = async () => {
         try {
             metadata = await sharp(bufferA).metadata();
-            thumbnailB = await sharp(bufferA)
-                .resize({ width: 500 })
-                .png()
-                .toBuffer();
+            thumbnailB = await sharp(bufferA).resize({ width: 350 }).toBuffer();
 
             let { data, info } = await sharp(bufferA)
                 .resize({ width: 500 })
@@ -60,18 +57,24 @@ let buildObjectsNew = async function (urls: string[]): Promise<ImageObject[]> {
         let height = 0;
         let channels = 3;
         let thumbnail = 'none';
-        if (metadata.width !== undefined) {
+        if (metadata.width) {
             width = metadata.width;
+        } else {
+            width = 0;
         }
-        if (metadata.height !== undefined) {
+        if (metadata.height) {
             height = metadata.height;
+        } else {
+            height = 0;
         }
-        if (metadata.channels !== undefined) {
+        if (metadata.channels) {
             channels = metadata.channels;
+        } else {
+            channels = 3;
         }
-        if (metadata.channels !== undefined) {
-            thumbnail = thumbnailB.toString();
-        }
+        if (thumbnailB) {
+            thumbnail = thumbnailB.toString('base64');
+        } else thumbnail = 'none';
         return {
             width: width,
             height: height,

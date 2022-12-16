@@ -6,6 +6,8 @@ import { scheduler } from '@/utils/logger';
 
 class ImageObjectScheduler implements Scheduler {
     public mainSchedule = '0 0 */5 * * *';
+    public oneHour = 3.6e6; //one hour
+    public max = 1.44e7; //4 hours
 
     constructor() {
         this.initSchedule();
@@ -25,10 +27,10 @@ class ImageObjectScheduler implements Scheduler {
     // }
 
     createScraperSchedules(): number[] {
-        let min = 3.6e6; //one hour
-        let max = 1.44e7; //4 hours
+        let min = 300000; //5min
+        let max = 600000; //10min
         let timeOne = Math.floor(Math.random() * (max - min) + min);
-        let timeTwo = timeOne + 3.6e6;
+        let timeTwo = timeOne + min;
 
         return [timeOne, timeTwo];
     }
@@ -36,7 +38,7 @@ class ImageObjectScheduler implements Scheduler {
     initSchedule(): void {
         let createSchedules = this.createScraperSchedules;
         const scheduleScrapers = new cron.CronJob({
-            cronTime: this.mainSchedule,
+            cronTime: '0 */20 * * * *', //this.mainSchedule,
             onTick: function () {
                 let [timeOne, timeTwo] = createSchedules();
                 setTimeout(function () {

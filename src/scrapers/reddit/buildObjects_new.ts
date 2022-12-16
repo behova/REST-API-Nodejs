@@ -3,13 +3,14 @@ import { AxiosError } from 'axios';
 import sharp from 'sharp';
 import { ImageObject } from '@/resources/imageObject/imageObject.interface';
 import getPallet from './quantize';
-import { redditScraper as logger } from '@/utils/logger';
+import { fourChanScraper as logger } from '@/utils/logger';
 
 let buildObjectsNew = async function (urls: string[]): Promise<ImageObject[]> {
     let objects: ImageObject[] = [];
     let bufferA: Buffer;
     let metadata: sharp.Metadata;
     let colorArray: Uint8ClampedArray = new Uint8ClampedArray();
+    let thumbnailB: Buffer;
 
     const getAxios = async (url: string) => {
         try {
@@ -36,6 +37,7 @@ let buildObjectsNew = async function (urls: string[]): Promise<ImageObject[]> {
     const sharpProccessing = async () => {
         try {
             metadata = await sharp(bufferA).metadata();
+            thumbnailB = await sharp(bufferA).resize({ width: 350 }).toBuffer();
 
             let { data, info } = await sharp(bufferA)
                 .resize({ width: 500 })
@@ -54,35 +56,47 @@ let buildObjectsNew = async function (urls: string[]): Promise<ImageObject[]> {
         let width = 0;
         let height = 0;
         let channels = 3;
-        if (metadata.width !== undefined) {
+        let thumbnail = 'none';
+        if (metadata.width) {
             width = metadata.width;
+        } else {
+            width = 0;
         }
-        if (metadata.height !== undefined) {
+        if (metadata.height) {
             height = metadata.height;
+        } else {
+            height = 0;
         }
-        if (metadata.channels !== undefined) {
+        if (metadata.channels) {
             channels = metadata.channels;
+        } else {
+            channels = 3;
         }
-        return { width: width, height: height, channels: channels };
+        if (thumbnailB) {
+            thumbnail = thumbnailB.toString('base64');
+        } else thumbnail = 'none';
+        return {
+            width: width,
+            height: height,
+            channels: channels,
+            thumbnail: thumbnail,
+        };
     };
 
     for (let i in urls) {
-        try {
-            await getAxios(urls[i]);
-            await sharpProccessing();
-            let { width, height, channels } = await buildObject();
-            let pallet = await getPallet(colorArray, channels);
+        await getAxios(urls[i]);
+        await sharpProccessing();
+        let { width, height, channels, thumbnail } = await buildObject();
+        let pallet = await getPallet(colorArray, channels);
 
-            objects.push({
-                url: urls[i],
-                source: urls[i],
-                width: width,
-                height: height,
-                pallet: pallet,
-            });
-        } catch (error) {
-            logger.error('buildObj', error);
-        }
+        objects.push({
+            url: urls[i],
+            source: urls[i],
+            width: width,
+            height: height,
+            pallet: pallet,
+            thumbnail: thumbnail,
+        });
     }
 
     return objects;

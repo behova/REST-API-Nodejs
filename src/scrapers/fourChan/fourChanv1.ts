@@ -1,7 +1,7 @@
 import { ImageObject } from '@/resources/imageObject/imageObject.interface';
 import ImageObjectService from '@/resources/imageObject/imageObject.service';
 import getUrls from './getUrls';
-import buildObjectsNew from './buildObjects_new';
+import buildObjectsNew from './buildObjects_new ';
 import HttpException from '@/utils/exceptions/http.exception';
 import Scraper from '@/utils/interfaces/scraper.interface';
 import Logger from '@/utils/logger';
